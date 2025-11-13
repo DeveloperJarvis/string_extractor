@@ -2,21 +2,21 @@
 
 A microproject to create a simple string extractor
 
-### Install GCC
+## For Ubuntu:
 
-For Ubuntu:
+### Install GCC
 
 ```bash
 sudo apt install gcc -y
 ```
 
-## Compile using gcc
+### Compile using gcc
 
 ```bash
 gcc -g -Wall -Wextra -o strex strex.c
 ```
 
-## Execute the object file
+### Execute the object file
 
 1. Simple execute
 
@@ -28,6 +28,33 @@ gcc -g -Wall -Wextra -o strex strex.c
 
 ```bash
 echo "Hello World" | ./strex
+```
+
+## For Windows:
+
+### Install clang
+
+1. Install Microsoft Visual Studio
+2. Add to your windows path:
+3. Win+ R > sysdm.cpl
+4. Advanced > Environment Variables
+5. System variables > Path > Edit
+6. Add (C:\Program Files\Microsoft Visual Studio\18\<Version>\VC\Tools\Llvm\bin
+   )
+
+### Compile using gcc
+
+```bash
+clang -c strex.c -o strex.o
+clang strex.o -o strex_x86.exe
+```
+
+### Execute the object file
+
+1. Simple execute
+
+```bash
+echo "Hello" | strex_x86.exe
 ```
 
 **Note:**
