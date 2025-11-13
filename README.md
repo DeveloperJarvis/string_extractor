@@ -1,36 +1,47 @@
 # String Extractor
+
 A microproject to create a simple string extractor
 
 ### Install GCC
+
 For Ubuntu:
+
 ```bash
 sudo apt install gcc -y
 ```
 
 ## Compile using gcc
+
 ```bash
 gcc -g -Wall -Wextra -o strex strex.c
 ```
 
 ## Execute the object file
+
 1. Simple execute
+
 ```bash
 ./strex
 ```
+
 2. Execute by passing echo
+
 ```bash
 echo "Hello World" | ./strex
 ```
 
+**Note:**
 
-**Note:** 
 1. This is a utility that shows binary data of string passed in echo
+
 ```bash
 echo "Hello" | xxd
 ## expected output:
 00000000: 4865 6c6c 6f0a                           Hello.
 ```
-2. If we append -n in the above statement 
+
+2. If we append -n in the above statement
+
 ```bash
 echo -n "Hello" | xxd
 ## expected output:
@@ -38,6 +49,7 @@ echo -n "Hello" | xxd
 ```
 
 **Note:** For manual pages (in Ubuntu)
+
 ```bash
 # man <package_name>
 man getchar
@@ -47,9 +59,10 @@ man ascii
 man 2 open
 ```
 
-**Note:** In xxd, 
--r          reverse operation: convert (or patch) hexdump into binary.
--ps         output in postscript plain hexdump style
+**Note:** In xxd,
+-r reverse operation: convert (or patch) hexdump into binary.
+-ps output in postscript plain hexdump style
+
 ```bash
 echo "48656c6c6f0a" | xxd -r -p
 echo "CAACCAEFFE48656c6c6fEFFEACCAAC0A" | xxd -r -ps > sample
@@ -115,6 +128,7 @@ For convenience, below are more compact ASCII tables in **hex** and **decimal** 
 ```
 
 **NOTE:** Can use openssl rand to generate random data
+
 ```bash
 openssl rand -hex 16
 394026046acb00debb6960ff5960733b
@@ -124,10 +138,24 @@ vk``U
 ```
 
 **NOTE:** You can use hexedit to edit a hexadecimal file
+
 ```bash
 # for installing hexedit on ubuntu
 sudo apt install hexedit
 # usage
 hexedit
 hexedit <filename>
+```
+
+## Creating tag
+
+```bash
+# 1. Check existing tags
+git tag
+# 2. Create a valid tag
+git tag -a v1.0.0 -m "Release version 1.0.0"
+# or lightweight tag
+git tag v1.0.0
+# push tag to remote
+git push origin v1.0.0
 ```
