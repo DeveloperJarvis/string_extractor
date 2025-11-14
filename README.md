@@ -1,6 +1,6 @@
 # String Extractor
 
-A microproject to create a simple string extractor
+A microproject to create a simple string extractor. Developed using C language
 
 ## For Ubuntu:
 
